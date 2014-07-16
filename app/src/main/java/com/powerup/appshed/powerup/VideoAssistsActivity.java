@@ -64,6 +64,9 @@ public class VideoAssistsActivity extends Activity {
                 // am.playSoundEffect(Sounds.DISALLOWED);
                 startActivity(new Intent(context, TakeAPictureAfter.class));
                 //TODO play video on separate activity
+                //startActivity(new Intent(context, PlayVideoActivity.class));
+                //startActivity(new Intent(context, Custom_CameraActivity.class));
+
             }
         });
         setContentView(mCardScroller);

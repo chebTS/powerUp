@@ -68,7 +68,9 @@ public class TakeAPictureBefore extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO fix take a picture
-                 //takePicture();
+                //startActivity(new Intent(context, Custom_CameraActivity.class));
+
+                //takePicture();
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 // am.playSoundEffect(Sounds.DISALLOWED);
                 startActivity(new Intent(context, Question1Activity.class));
