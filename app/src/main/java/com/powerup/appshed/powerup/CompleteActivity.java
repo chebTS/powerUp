@@ -84,7 +84,7 @@ public class CompleteActivity extends Activity {
     private View buildView() {
         Card card = new Card(this);
         card.setImageLayout(Card.ImageLayout.FULL);
-        card.addImage(R.drawable.ic_glass_logo);
+        card.addImage(R.drawable.complete);
         card.setFootnote("Complete");
         return card.getView();
     }

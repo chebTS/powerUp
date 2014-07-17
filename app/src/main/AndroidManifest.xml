@@ -35,7 +35,8 @@
         <activity
             android:name=".TakeAPictureBefore"/>
         <activity
-            android:name=".Question1Activity"/>
+            android:name=".Question1Activity"
+            android:theme="@style/MenuTheme"/>
 
         <activity
             android:name=".Question2Activity"/>

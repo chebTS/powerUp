@@ -87,7 +87,7 @@ public class Solution2Activity extends Activity {
         Card card = new Card(this);
         card.setText("Solution: Please open the hand to left");
         card.setImageLayout(Card.ImageLayout.LEFT);
-        card.addImage(R.drawable.ic_glass_logo);
+        card.addImage(R.drawable.solutionstep2);
         card.setFootnote("Done");
         return card.getView();
     }

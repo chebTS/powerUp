@@ -87,7 +87,7 @@ public class Question2Activity extends Activity {
         Card card = new Card(this);
         card.setText("Please confirm red light is on");
         card.setImageLayout(Card.ImageLayout.LEFT);
-        card.addImage(R.drawable.ic_stop);
+        card.addImage(R.drawable.rightlight);
         card.setFootnote("Yes");
         return card.getView();
     }

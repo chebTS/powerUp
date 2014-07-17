@@ -87,7 +87,7 @@ public class Solution1Activity extends Activity {
         Card card = new Card(this);
         card.setText("Solution: set handle 3 o`clock");
         card.setImageLayout(Card.ImageLayout.LEFT);
-        card.addImage(R.drawable.ic_launcher);
+        card.addImage(R.drawable.solutionstep1);
         card.setFootnote("Done");
         return card.getView();
     }
