@@ -85,7 +85,8 @@ public class Solution1Activity extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("Solution: set handle 3 o`clock");
+        //card.setText("Ok, the problem is understood.Let`s save lives");
+        card.setText("Turn the handle to 3 o`clock");
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.solutionstep1);
         card.setFootnote("Done");

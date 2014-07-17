@@ -102,14 +102,14 @@ public class DirectionActivity extends Activity {
         Card card = new Card(this);
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.directions1);
-        card.setText("Direction #1");
+        card.setText("James, walk 100 feet to the left");
 //        card.setFootnote("Tap to continue");
         views.add(card.getView());
 
         card = new Card(this);
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.directions2);
-        card.setText("Direction #2");
+        card.setText("Great, just another 30 feet straight");
         card.setFootnote("Tap to continue");
         views.add(card.getView());
 

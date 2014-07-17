@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("PowerUp!");
+        card.setText("Time to PowerUp and save lives!");
         card.setFootnote("Tap to continue");
         return card.getView();
     }

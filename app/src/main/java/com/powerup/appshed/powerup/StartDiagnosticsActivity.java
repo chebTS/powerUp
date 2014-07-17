@@ -87,7 +87,7 @@ public class StartDiagnosticsActivity extends Activity{
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("Start Diagnostics");
+        card.setText("Well done James, let`s start diagnostics");
         card.setFootnote("Tap to continue");
         return card.getView();
     }

@@ -1,4 +1,4 @@
-package com.powerup.appshed.powerup;
+package com.powerup.appshed.powerup.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,11 +12,15 @@ import android.widget.AdapterView;
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.powerup.appshed.powerup.R;
+import com.powerup.appshed.powerup.Solution1Activity;
+import com.powerup.appshed.powerup.Solution2Activity;
 
 /**
- * Created by someone on 16.07.2014.
+ * Created by someone on 17.07.2014.
  */
-public class VideoAssistsActivity extends Activity {
+public class MiddleActivity extends Activity {
+
     private Context context;
 
     /** {@link com.google.android.glass.widget.CardScrollView} to use as the main content view. */
@@ -62,11 +66,7 @@ public class VideoAssistsActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 // am.playSoundEffect(Sounds.DISALLOWED);
-                startActivity(new Intent(context, TakeAPictureAfter.class));
-                //TODO play video on separate activity
-                //startActivity(new Intent(context, PlayVideoActivity.class));
-                //startActivity(new Intent(context, Custom_CameraActivity.class));
-
+                startActivity(new Intent(context, Solution1Activity.class));
             }
         });
         setContentView(mCardScroller);
@@ -89,9 +89,8 @@ public class VideoAssistsActivity extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setImageLayout(Card.ImageLayout.FULL);
-        card.addImage(R.drawable.video_play);
-        card.setFootnote("Play");
+        card.setText("Ok, the problem is understood.Let`s save lives");
+        card.setFootnote("Tap to see solution");
         return card.getView();
     }
 }

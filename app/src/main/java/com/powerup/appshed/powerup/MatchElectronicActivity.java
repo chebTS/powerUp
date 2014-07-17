@@ -87,10 +87,12 @@ public class MatchElectronicActivity extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("Match the Electronic");
+        card.setText("Can you see a box like this one?");
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.matchthebox);
-        card.setFootnote("Tap to continue");
+        card.setFootnote("Yes, no");
         return card.getView();
     }
+
+
 }

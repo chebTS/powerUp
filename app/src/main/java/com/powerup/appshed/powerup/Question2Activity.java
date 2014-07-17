@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -12,6 +15,7 @@ import android.widget.AdapterView;
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.powerup.appshed.powerup.view.MiddleActivity;
 
 /**
  * Created by someone on 16.07.2014.
@@ -62,7 +66,7 @@ public class Question2Activity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 // am.playSoundEffect(Sounds.DISALLOWED);
-                startActivity(new Intent(context, Solution1Activity.class));
+                //startActivity(new Intent(context, MiddleActivity.class));
             }
         });
         setContentView(mCardScroller);
@@ -85,10 +89,42 @@ public class Question2Activity extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("Please confirm red light is on");
+        card.setText("Please confirm the indicator light is red");
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.rightlight);
         card.setFootnote("Yes");
         return card.getView();
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        openOptionsMenu();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_yes_no, menu);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_yes:
+                startActivity(new Intent(context, MiddleActivity.class));
+                return true;
+            case R.id.menu_item_no:
+                startActivity(new Intent(context, MiddleActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onOptionsMenuClosed(Menu menu) {
+        finish();
     }
 }

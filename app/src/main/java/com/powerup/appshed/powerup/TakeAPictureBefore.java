@@ -118,7 +118,7 @@ public class TakeAPictureBefore extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("Take a picture");
+        card.setText("First off, take a picture of the broken box");
         card.setFootnote("Tap to take photo");
         return card.getView();
     }

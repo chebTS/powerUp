@@ -48,7 +48,7 @@
             android:name=".Solution2Activity"/>
 
         <activity
-            android:name=".VideoAssistsActivity"/>
+            android:name=".view.MiddleActivity"/>
 
         <activity
             android:name=".TakeAPictureAfter"/>

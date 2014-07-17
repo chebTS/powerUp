@@ -62,7 +62,7 @@ public class Solution2Activity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 // am.playSoundEffect(Sounds.DISALLOWED);
-                startActivity(new Intent(context, VideoAssistsActivity.class));
+                startActivity(new Intent(context, CompleteActivity.class));
             }
         });
         setContentView(mCardScroller);
@@ -85,7 +85,7 @@ public class Solution2Activity extends Activity {
      */
     private View buildView() {
         Card card = new Card(this);
-        card.setText("Solution: Please open the hand to left");
+        card.setText("Enable the fuse in front of you");
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.solutionstep2);
         card.setFootnote("Done");
