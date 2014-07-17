@@ -25,6 +25,7 @@ import java.io.File;
 public class TakeAPictureBefore extends Activity {
     private static final int TAKE_PICTURE_REQUEST = 1;
     private Context context;
+    private boolean isPhotoTaken = false;
 
     /** {@link com.google.android.glass.widget.CardScrollView} to use as the main content view. */
     private CardScrollView mCardScroller;
@@ -74,7 +75,12 @@ public class TakeAPictureBefore extends Activity {
                 //takePicture();
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 // am.playSoundEffect(Sounds.DISALLOWED);
-                startActivity(new Intent(context, Question1Activity.class));
+                if (isPhotoTaken) {
+                    startActivity(new Intent(context, Question1Activity.class));
+                }else{
+                    isPhotoTaken = true;
+                    takePicture();
+                }
             }
         });
         setContentView(mCardScroller);
@@ -84,6 +90,9 @@ public class TakeAPictureBefore extends Activity {
     protected void onResume() {
         super.onResume();
         mCardScroller.activate();
+        if (isPhotoTaken){
+            startActivity(new Intent(context, Question1Activity.class));
+        }
     }
 
     /*@Override
