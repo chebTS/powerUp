@@ -92,6 +92,7 @@ public class TakeAPictureBefore extends Activity {
         mCardScroller.activate();
         if (isPhotoTaken){
             startActivity(new Intent(context, Question1Activity.class));
+            isPhotoTaken = false;
         }
     }
 

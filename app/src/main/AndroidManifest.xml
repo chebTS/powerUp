@@ -58,6 +58,7 @@
 
         <activity android:name=".PlayVideoActivity"/>
 
+
         <activity
             android:name=".Custom_CameraActivity"
             android:screenOrientation="landscape"/>

@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -64,7 +67,7 @@ public class MatchElectronicActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 //am.playSoundEffect(Sounds.DISALLOWED);
-                startActivity(new Intent(context, StartDiagnosticsActivity.class));
+                //startActivity(new Intent(context, StartDiagnosticsActivity.class));
             }
         });
         setContentView(mCardScroller);
@@ -90,9 +93,40 @@ public class MatchElectronicActivity extends Activity {
         card.setText("Can you see a box like this one?");
         card.setImageLayout(Card.ImageLayout.LEFT);
         card.addImage(R.drawable.matchthebox);
-        card.setFootnote("Yes, no");
         return card.getView();
     }
 
+
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        openOptionsMenu();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_yes_no, menu);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_yes:
+                startActivity(new Intent(context, StartDiagnosticsActivity.class));
+                return true;
+            case R.id.menu_item_no:
+                startActivity(new Intent(context, StartDiagnosticsActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onOptionsMenuClosed(Menu menu) {
+        finish();
+    }
 
 }

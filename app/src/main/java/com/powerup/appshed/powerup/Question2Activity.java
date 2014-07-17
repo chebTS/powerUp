@@ -114,9 +114,11 @@ public class Question2Activity extends Activity {
         switch (item.getItemId()) {
             case R.id.menu_item_yes:
                 startActivity(new Intent(context, MiddleActivity.class));
+                finish();
                 return true;
             case R.id.menu_item_no:
                 startActivity(new Intent(context, MiddleActivity.class));
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -2,6 +2,7 @@ package com.powerup.appshed.powerup;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,8 +60,11 @@ public class CompleteActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 // am.playSoundEffect(Sounds.DISALLOWED);
-                //startActivity(new Intent(context, VideoAssistsActivity.class));
-                //TODO play video on separate activity
+
+                /*Intent intent =  new Intent(context, FinishActivity.class);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);*/
             }
         });
         setContentView(mCardScroller);
