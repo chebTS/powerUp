@@ -89,10 +89,8 @@ public class MatchElectronicActivity extends Activity {
         Card card = new Card(this);
         card.setText("Match the Electronic");
         card.setImageLayout(Card.ImageLayout.LEFT);
-        card.addImage(R.drawable.ic_launcher);
+        card.addImage(R.drawable.matchthebox);
         card.setFootnote("Tap to continue");
         return card.getView();
     }
-
-
 }

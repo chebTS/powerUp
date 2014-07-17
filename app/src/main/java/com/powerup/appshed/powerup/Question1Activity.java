@@ -88,7 +88,7 @@ public class Question1Activity extends Activity {
         Card card = new Card(this);
         card.setText("Please confirm dial > 60");
         card.setImageLayout(Card.ImageLayout.LEFT);
-        card.addImage(R.drawable.ic_launcher);
+        card.addImage(R.drawable.hand3oclock);
         card.setFootnote("Yes");
         return card.getView();
     }

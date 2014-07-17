@@ -69,6 +69,7 @@ public class TakeAPictureBefore extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO fix take a picture
                 //startActivity(new Intent(context, Custom_CameraActivity.class));
+                //startActivityForResult(new Intent(context, Custom_CameraActivity.class), TAKE_PICTURE_REQUEST);
 
                 //takePicture();
                 //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -104,6 +105,8 @@ public class TakeAPictureBefore extends Activity {
 
 
 
+
+
     @Override
     protected void onPause() {
         mCardScroller.deactivate();
@@ -129,9 +132,10 @@ public class TakeAPictureBefore extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == TAKE_PICTURE_REQUEST && resultCode == RESULT_OK) {
-            String picturePath = data.getStringExtra(
+            startActivity(new Intent(context, Question1Activity.class));
+            /*String picturePath = data.getStringExtra(
                     CameraManager.EXTRA_PICTURE_FILE_PATH);
-            processPictureWhenReady(picturePath);
+            processPictureWhenReady(picturePath);*/
         }
 
         super.onActivityResult(requestCode, resultCode, data);

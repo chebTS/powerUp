@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.powerup.appshed.powerup.view.CameraPreview;
 
@@ -26,7 +27,7 @@ import java.util.Date;
 public class Custom_CameraActivity extends Activity {
     private Camera mCamera;
     private CameraPreview mCameraPreview;
-    private LinearLayout containerClick;
+    private RelativeLayout root;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,50 +37,16 @@ public class Custom_CameraActivity extends Activity {
         mCameraPreview = new CameraPreview(this, mCamera);
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mCameraPreview);
+        root = (RelativeLayout)findViewById(R.id.root);
 
-        containerClick = (LinearLayout)findViewById(R.id.cotainer_click);
-        containerClick.setOnClickListener(new View.OnClickListener() {
+        root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCamera.takePicture(null, null, mPicture);
-                finish();
-
+                setResult(RESULT_OK);
+               //mCamera.takePicture(null, null, mPicture);
+               finish();
             }
         });
-        containerClick.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                mCamera.takePicture(null, null, mPicture);
-                finish();
-
-                return false;
-            }
-        });
-
-
-/*
-        preview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCamera.takePicture(null, null, mPicture);
-                finish();
-            }
-        });*/
-        /*preview.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                mCamera.takePicture(null, null, mPicture);
-                finish();
-                return false;
-            }
-        });*/
-//        Button captureButton = (Button) findViewById(R.id.button_capture);
-//        captureButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mCamera.takePicture(null, null, mPicture);
-//            }
-//        });
     }
 
     private Camera getCameraInstance() {
